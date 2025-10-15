@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 3 — Cambiar color al presionar fila</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <table border="1" cellpadding="8">
+    <tr><td>Fila 1 - A</td><td>Fila 1 - B</td></tr>
+    <tr><td>Fila 2 - A</td><td>Fila 2 - B</td></tr>
+  </table>
+  
+  <p><a href="../index.html">← Volver al menú</a></p>
+  
+  <script>
+    $(function () {
+      $('tr').on('mousedown', function () {
+        $(this).css('background-color', '#ffd966'); 
+      });
+
+      $('tr').on('mouseup mouseleave', function () {
+        $(this).css('background-color', '');
+      });
+    });
+  </script>
+</body>
+</html>

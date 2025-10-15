@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Efectos show/hide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .box { border:1px solid #ccc; padding:12px; margin:10px 0; }
+  </style>
+</head>
+<body>
+
+  <div id="bloque1" class="box">
+    <h3>Bloque 1</h3>
+    <p>Hacé click aquí dentro para ocultar este bloque lentamente…</p>
+    <p>…y que aparezca el otro.</p>
+  </div>
+
+  <div id="bloque2" class="box" style="display:none;">
+    <h3>Bloque 2</h3>
+    <p>Hola! Este apareció lentamente cuando el anterior se ocultó.</p>
+    <p>Click aquí para volver al bloque 1.</p>
+  </div>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('#bloque1').on('click', function () {
+        $('#bloque1').hide('slow', function () {
+          $('#bloque2').show('slow');
+        });
+      });
+
+      $('#bloque2').on('click', function () {
+        $('#bloque2').hide('slow', function () {
+          $('#bloque1').show('slow');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

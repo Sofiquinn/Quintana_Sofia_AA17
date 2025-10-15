@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Redimensionar con doble clic</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #box {
+      width: 800px;
+      height: 70px;
+      background: #eaeaea;
+      border: 2px solid #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      cursor: pointer;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <div id="box">Doble clic para cambiar tamaño</div>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      let grande = true; 
+      $('#box').on('dblclick', function () {
+        if (grande) {
+          $(this).css({ width: '250px', height: '250px' });
+        } else {
+          $(this).css({ width: '800px', height: '70px' });
+        }
+        grande = !grande;
+      });
+    });
+  </script>
+</body>
+</html>

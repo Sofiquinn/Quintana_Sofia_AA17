@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cambiar tamaño por clase</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Noticias</h1>
+
+  <h3>Título de la noticia 1</h3>
+  <div class="desc n1">
+    Descripción breve de la noticia 1. Texto de prueba para la clase <code>n1</code>.
+  </div>
+  <p>
+    <button class="btn" data-clase="n1" data-size="14">Pequeño</button>
+    <button class="btn" data-clase="n1" data-size="18">Mediano</button>
+    <button class="btn" data-clase="n1" data-size="22">Grande</button>
+  </p>
+
+  <h3>Título de la noticia 2</h3>
+  <div class="desc n2">
+    Descripción breve de la noticia 2. Texto de prueba para la clase <code>n2</code>.
+  </div>
+  <p>
+    <button class="btn" data-clase="n2" data-size="14">Pequeño</button>
+    <button class="btn" data-clase="n2" data-size="18">Mediano</button>
+    <button class="btn" data-clase="n2" data-size="22">Grande</button>
+  </p>
+
+  <h3>Título de la noticia 3</h3>
+  <div class="desc n3">
+    Descripción breve de la noticia 3. Texto de prueba para la clase <code>n3</code>.
+  </div>
+  <p>
+    <button class="btn" data-clase="n3" data-size="14">Pequeño</button>
+    <button class="btn" data-clase="n3" data-size="18">Mediano</button>
+    <button class="btn" data-clase="n3" data-size="22">Grande</button>
+  </p>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('.btn').on('click', function () {
+        const clase = $(this).data('clase');   
+        const size = $(this).data('size');     
+        $('.' + clase).css('font-size', size + 'px');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Botones que cambian de color al presionar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    button { padding: 10px 16px; margin: 8px; }
+    .presionado { background:#ffd966; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <button class="btn">Botón 1</button>
+  <button class="btn">Botón 2</button>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('.btn').on('mousedown', function () {
+        $(this).addClass('presionado');
+      });
+      $('.btn').on('mouseup mouseleave', function () {
+        $(this).removeClass('presionado');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Cambiar color al tomar foco</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    input[type="text"] { color: blue; padding: 6px 10px; margin: 6px 0; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <input type="text" value="Nombre">
+  <br>
+  <input type="text" value="Correo">
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('input[type="text"]').on('focus', function () {
+        $(this).css('color', 'red');
+      }).on('blur', function () {
+        $(this).css('color', 'blue');
+      });
+    });
+  </script>
+</body>
+</html>

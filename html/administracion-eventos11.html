@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Ocultar <strong> al presionar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <p>
+    Este <strong>texto</strong> tiene algunas palabras en
+    <strong>negrita</strong>. Al hacer click sobre una
+    palabra <strong>resaltada</strong>, se ocultará.
+  </p>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('strong').on('click', function () {
+        $(this).hide();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cambiar href y texto</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Hipervínculo dinámico</h1>
+
+  <p><a id="enlace" href="" target="_blank">[sin enlace]</a></p>
+
+  <p>
+    <button class="set" data-url="https://www.google.com" data-text="Ir a Google">Google</button>
+    <button class="set" data-url="https://es.wikipedia.org" data-text="Ir a Wikipedia">Wikipedia</button>
+    <button class="set" data-url="https://www.youtube.com" data-text="Ir a YouTube">YouTube</button>
+  </p>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('.set').on('click', function () {
+        const url = $(this).data('url');
+        const txt = $(this).data('text');
+        $('#enlace').attr('href', url).text(txt);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Resaltar dominios .ar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .resaltado { background: #ffd966; padding: 2px 4px; border-radius: 4px; }
+    ul { line-height: 1.8; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Enlaces</h1>
+  <ul>
+    <li><a href="https://www.google.com">Google (.com)</a></li>
+    <li><a href="https://www.lanacion.com.ar">La Nación (.com.ar)</a></li>
+    <li><a href="https://www.wikipedia.org">Wikipedia (.org)</a></li>
+    <li><a href="https://www.afip.gob.ar">AFIP (.gob.ar)</a></li>
+    <li><a href="https://www.buenosaires.gob.ar">BA Gobierno (.gob.ar)</a></li>
+  </ul>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('a').each(function () {
+        const href = $(this).attr('href') || '';
+        if (href.indexOf('.ar') !== -1) {
+          $(this).addClass('resaltado');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

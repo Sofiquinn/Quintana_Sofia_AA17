@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Coordenadas dentro de un div</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    #area {
+      width: 200px;
+      height: 200px;
+      border: 2px solid #333;
+      background: #f5f5f5;
+      margin-bottom: 12px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <div id="area"></div>
+  <p id="info">Fuera del div</p>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      const $area = $('#area');
+      const $info = $('#info');
+
+      $area.on('mousemove', function (e) {
+        const off = $area.offset();
+        const x = Math.round(e.pageX - off.left);
+        const y = Math.round(e.pageY - off.top);
+        $info.text(`Dentro: (${x}, ${y})`);
+      });
+
+      $area.on('mouseenter', function () {
+        $info.text('Dentro: (—, —)');
+      });
+
+      $area.on('mouseleave', function () {
+        $info.text('Fuera del div');
+      });
+    });
+  </script>
+</body>
+</html>

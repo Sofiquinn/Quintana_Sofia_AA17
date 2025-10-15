@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — fadeIn / fadeOut</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .box { border:1px solid #ccc; padding:12px; margin:10px 0; }
+  </style>
+</head>
+<body>
+
+  <div id="bloque1" class="box">
+    <h3>Bloque 1</h3>
+    <p>Hacé click aquí para ocultar por decoloración y mostrar el otro.</p>
+  </div>
+
+  <div id="bloque2" class="box" style="display:none;">
+    <h3>Bloque 2</h3>
+    <p>Click aquí para volver al bloque 1.</p>
+  </div>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('#bloque1').on('click', function () {
+        $('#bloque1').fadeOut('slow', function () {
+          $('#bloque2').fadeIn('slow');
+        });
+      });
+
+      $('#bloque2').on('click', function () {
+        $('#bloque2').fadeOut('slow', function () {
+          $('#bloque1').fadeIn('slow');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

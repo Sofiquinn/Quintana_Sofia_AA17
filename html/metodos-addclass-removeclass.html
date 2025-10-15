@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Asociar/Desasociar clases en thead/tbody</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .estilo-head th { background:#222; color:#fff; }
+    .estilo-body td { background:#f0f8ff; }
+    table { border-collapse: collapse; }
+    th, td { border:1px solid #ccc; padding:8px 12px; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Tabla con estilos por sección</h1>
+
+  <table id="tabla">
+    <thead>
+      <tr><th>Col A</th><th>Col B</th><th>Col C</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1A</td><td>1B</td><td>1C</td></tr>
+      <tr><td>2A</td><td>2B</td><td>2C</td></tr>
+      <tr><td>3A</td><td>3B</td><td>3C</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    <button id="aplicar">Aplicar estilos</button>
+    <button id="quitar">Quitar estilos</button>
+  </p>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('#aplicar').on('click', function () {
+        $('#tabla thead').addClass('estilo-head');
+        $('#tabla tbody').addClass('estilo-body');
+      });
+
+      $('#quitar').on('click', function () {
+        $('#tabla thead').removeClass('estilo-head');
+        $('#tabla tbody').removeClass('estilo-body');
+      });
+    });
+  </script>
+</body>
+</html>

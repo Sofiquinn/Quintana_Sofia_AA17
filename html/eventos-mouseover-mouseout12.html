@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — Pintar celda al pasar el mouse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    table { border-collapse: collapse; }
+    td { border:1px solid #ccc; padding:16px 24px; text-align:center; }
+    .pintada { background:#ffd966; }
+  </style>
+</head>
+<body>
+
+  <h1>Tabla 2 × 2</h1>
+
+  <table>
+    <tr><td>A1</td><td>A2</td></tr>
+    <tr><td>B1</td><td>B2</td></tr>
+  </table>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('td').on('mouseenter', function () {
+        $(this).addClass('pintada');   // se pinta al entrar y queda pintada
+      });
+    });
+  </script>
+</body>
+</html>

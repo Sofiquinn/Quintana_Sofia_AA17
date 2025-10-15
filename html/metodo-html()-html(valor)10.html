@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery — html() en head y body</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <h1>Demo html()</h1>
+  <p>Probando lectura del HTML de la cabecera y del cuerpo.</p>
+
+  <button id="btnHead">Ver HTML del &lt;head&gt;</button>
+  <button id="btnBody">Ver HTML del &lt;body&gt;</button>
+
+  <p><a href="../index.html">← Volver al menú</a></p>
+
+  <script>
+    $(function () {
+      $('#btnHead').on('click', function () {
+        alert($('head').html());
+      });
+
+      $('#btnBody').on('click', function () {
+        alert($('body').html());
+      });
+    });
+  </script>
+</body>
+</html>
